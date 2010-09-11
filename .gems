@@ -1,0 +1,2 @@
+authlogic --version '>= 2.1.6'
+paperclip --version '=2.3.1.1'
