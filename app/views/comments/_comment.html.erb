@@ -3,8 +3,10 @@
     <p>
       <strong><%= h(comment.author)%> napisał: </strong> <br />
       <%= h(comment.body) %> <br />
-      <%= link_to "Zatwierdź", post_comment_path(@post, comment), :method => :put%> | 
-      <%= link_to "Usuń", post_comment_path(@post, comment), :method => :delete %>
+      <% if current_user %>
+        <%= link_to "Zatwierdź", post_comment_path(@post, comment), :method => :put%> | 
+        <%= link_to "Usuń", post_comment_path(@post, comment), :method => :delete %>
+      <% end %>
     </p>  
   <% end %>
 <% end %>
