@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Posts: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'h3',  :media => 'screen' %>
+</head>
+<body>
+  <div id="wrapper1"><div id="wrapper2">
+    <div id="head">
+        <div id="menu">
+        <div>
+          <%= link_to "Blog", posts_path %> 
+          <% if !current_user %>
+            <%= link_to "Zaloguj", new_user_session_path %> 
+          <% else %>
+            <%= link_to "Konto", account_path %> 
+            <%= link_to "Wyloguj", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+          <% end %>    
+        </div>
+        </div>
+    <h3> Ruby on Rails </h3>
+         <span class="title1"> Blog testowy </span>
+
+    </div>
+    <div id="contentWrapper1">
+  	<div id="contentWrapper2">  
+
+      <div id="content">
+
+        <p style="color: green"><%= notice %></p>
+  
+        <%= yield %>
+  
+      </div>
+      
+    </div></div>
+  </div></div>
+</body>
+</html>

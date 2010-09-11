@@ -1,0 +1,10 @@
+<% div_for comment do %>
+  <% if comment.approved || current_user  %>
+    <p>
+      <strong><%= h(comment.author)%> napisał: </strong> <br />
+      <%= h(comment.body) %> <br />
+      <%= link_to "Zatwierdź", post_comment_path(@post, comment), :method => :put%> | 
+      <%= link_to "Usuń", post_comment_path(@post, comment), :method => :delete %>
+    </p>  
+  <% end %>
+<% end %>
