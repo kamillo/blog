@@ -20,9 +20,5 @@ class Post < ActiveRecord::Base
       self.slug = self.title.parameterize
     end
   end
-# def to_param
-#    "#{id}-#{title.parameterize}"    
-#     "#{id}-#{title.gsub(/[^a-z0-9]+/i, '-')}" 
-#  end 
 end
-#TODO dasdasd
+
